@@ -1,0 +1,76 @@
+# Task 配置文件
+
+gather_reddit_posts_task:
+  description: >
+    1. 使用 fetch_subreddit_posts 工具获取以下版块的今日热门内容：{target_subreddits}
+    2. 从所有帖子中，筛选出 6-8 个最能激发"构建欲望"的内容
+    3. 你的搜寻雷达关键词：
+       - **AI IDE**: Cursor, Windsurf, Copilot
+       - **Rapid Dev**: v0, Bolt.new, Replit, Lovable
+       - **Fullstack**: Next.js, Supabase, Tailwind
+       - **Local AI**: Ollama, LM Studio, Apple MLX
+    4. 忽略：纯新闻报道、无聊的政策讨论、只有标题没有干货的帖子
+  expected_output: >
+    一份清单，包含：
+    - 标题
+    - 来源链接
+    - **Vibe 评分** (1-10, 基于是否能提高效率或足够酷)
+    - 为什么这东西对 Vibe Coder 很有用 (一句话狠评)
+  agent: reddit_scout
+
+gather_hackernews_posts_task:
+  description: >
+    1. 使用 fetch_hackernews_posts 工具获取 Hacker News 热门
+    2. 筛选目标：寻找那些让开发者觉得 "Shut up and take my money" (或者 Star) 的项目
+    3. 重点关注：
+       - "Show HN": 独立开发者的精彩 Demo
+       - 新出的开源工具库 (尤其是 Python/JS 生态)
+       - AI 应用开发的实战教程
+    4. 过滤掉：过于晦涩的理论、与开发无关的政治/经济新闻
+  expected_output: >
+    一份精选清单，包含：
+    - 项目/文章名称
+    - 链接 (Demo 链接优先)
+    - 简短技术栈分析 (例如: "基于 React + LangChain")
+    - 推荐语
+  agent: hackernews_scout
+
+analyze_and_report_task:
+  description: >
+    将收集到的情报整合成一份《AI Vibe Coding 日报》。
+    
+    结构要求：
+    1. **⚡️ Vibe of the Day** (今日最令人兴奋的一个发现，放在最前面)
+    2. **🛠️ 效率神器 (Toolkit)** (Cursor 技巧, 新 VSCode 插件, CLI 工具等)
+    3. **🔥 热门项目 (Repos & Demos)** (Github 高星, Show HN 精选)
+    4. **📚 必读教程 (Tutorials)** (实战类的，教你怎么写的)
+    
+    写作风格指南：
+    - 直接，不要废话。告诉读者“去哪里下”、“怎么用”、“有什么用”。
+    - 如果有代码片段或配置参数，简要提及。
+    - 使用 Emoji 让排版看起来像一份精美的 Newsletter。
+    - 并在文末加一句 "Happy Coding! 🚀"
+    
+    使用中文撰写。
+  expected_output: >
+    一份 Markdown 格式的日报。需包含日期。
+    内容必须极具实操性，让读者读完觉得"技能树+1"。
+  agent: tech_analyst
+  output_file: reports/daily_report.md
+
+gather_twitter_posts_task:
+  description: >
+    1. 使用 fetch_twitter_posts 工具获取以下账号的最新动态：{target_accounts}
+    2. 只有当推文包含以下内容时才保留：
+       - 发布了新工具/Demo (Look for: "launch", "demo", "release", "new", "paper")
+       - 发表了对 AI 发展的深刻见解
+       - 分享了高效编程的技巧
+    3. 过滤掉：简单的转发/回复 (除非非常有价值)、生活琐事、广告。
+    4. 对每一条保留的推文，分析其对开发者的实际价值。
+  expected_output: >
+    一份 Twitter 情报清单，包含：
+    - 作者
+    - 推文链接
+    - 原始内容摘要
+    - **Vibe Check**: 为什么这个值得关注？
+  agent: twitter_scout
