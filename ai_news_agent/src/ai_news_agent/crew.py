@@ -37,8 +37,8 @@ def get_llm():
     # 确保代理配置正确
     setup_proxy()
     
-    api_base = os.getenv("OPENAI_API_BASE", "https://api.deepseek.com")
-    model_name = os.getenv("OPENAI_MODEL_NAME", "deepseek-chat")
+    api_base = os.getenv("OPENAI_API_BASE") or "https://api.deepseek.com"
+    model_name = os.getenv("OPENAI_MODEL_NAME") or "deepseek-chat"
     
     # 使用 openai/ 前缀强制走 OpenAI 兼容模式
     # 这样 CrewAI 不会尝试使用原生 Anthropic/DeepSeek SDK
