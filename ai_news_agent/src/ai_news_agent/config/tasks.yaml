@@ -60,7 +60,7 @@ analyze_and_report_task:
 
 gather_twitter_posts_task:
   description: >
-    1. 使用 fetch_twitter_posts 工具获取以下账号的最新动态：{target_accounts}
+    1. 使用 search_twitter 工具获取以下账号的最新动态：{target_accounts}
     2. 只有当推文包含以下内容时才保留：
        - 发布了新工具/Demo (Look for: "launch", "demo", "release", "new", "paper")
        - 发表了对 AI 发展的深刻见解

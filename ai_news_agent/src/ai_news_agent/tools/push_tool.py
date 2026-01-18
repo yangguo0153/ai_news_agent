@@ -149,19 +149,21 @@ class PushTool(BaseTool):
         """简单的 Markdown 转 HTML"""
         # 基础转换
         html = markdown
-        html = html.replace("\n\n", "</p><p>")
-        html = html.replace("\n", "<br>")
         
-        # 处理标题
+        # 处理标题 (在处理换行符之前)
         import re
-        html = re.sub(r"^### (.+)$", r"<h3>\1</h3>", html, flags=re.MULTILINE)
-        html = re.sub(r"^## (.+)$", r"<h2>\1</h2>", html, flags=re.MULTILINE)
         html = re.sub(r"^# (.+)$", r"<h1>\1</h1>", html, flags=re.MULTILINE)
+        html = re.sub(r"^## (.+)$", r"<h2>\1</h2>", html, flags=re.MULTILINE)
+        html = re.sub(r"^### (.+)$", r"<h3>\1</h3>", html, flags=re.MULTILINE)
         
         # 处理链接
         html = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', html)
         
         # 处理粗体
         html = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", html)
+        
+        # 基础转换
+        html = html.replace("\n\n", "</p><p>")
+        html = html.replace("\n", "<br>")
         
         return f"<html><body><p>{html}</p></body></html>"

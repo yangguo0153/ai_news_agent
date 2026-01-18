@@ -85,6 +85,10 @@ def run():
     try:
         # 创建并执行 Crew
         crew_instance = AINewsAgentCrew()
+        
+        # 补充 Twitter 账号输入
+        inputs["target_accounts"] = ", ".join(crew_instance.target_accounts)
+        
         result = crew_instance.crew().kickoff(inputs=inputs)
         
         print("\n" + "=" * 60)
