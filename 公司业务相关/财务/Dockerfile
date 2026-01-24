@@ -18,13 +18,9 @@ COPY . .
 # Create downloads directory
 RUN mkdir -p web_app/downloads
 
-# Expose port (Railway will override with PORT env var)
-EXPOSE 8000
-
 # Environment variables (override in production)
 ENV DATABASE_URL=sqlite:///./reimbursement.db
 ENV SECRET_KEY=change-me-in-production
 
-# Start command - Use shell form to allow $PORT substitution
-# Railway sets PORT env var, default to 8000 if not set
-CMD uvicorn web_app.app:app --host 0.0.0.0 --port ${PORT:-8000}
+# Railway uses PORT env var - use explicit shell form
+CMD ["/bin/sh", "-c", "uvicorn web_app.app:app --host 0.0.0.0 --port ${PORT:-8000}"]
