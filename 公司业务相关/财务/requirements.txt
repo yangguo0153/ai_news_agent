@@ -1,0 +1,16 @@
+pandas
+openpyxl
+python-docx
+pymupdf
+pytesseract
+Pillow
+fastapi
+uvicorn
+python-multipart
+jinja2
+sqlmodel
+requests
+# Auth dependencies (Phase 5B)
+passlib[bcrypt]
+python-jose[cryptography]
+email-validator

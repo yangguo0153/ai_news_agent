@@ -1,0 +1,13 @@
+# .dockerignore
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+*.md
+.env
+*.db
+web_app/downloads/*
+输入/
+输出/
+.agent/
