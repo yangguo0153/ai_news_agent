@@ -18,7 +18,20 @@ from datetime import datetime
 # Add parent directory to path to import expense_agent
 sys.path.append(str(Path(__file__).parent.parent))
 
-from expense_agent.main import process_reimbursement
+# Lazy import - will be imported when actually needed
+# This prevents startup crash if expense_agent has issues
+process_reimbursement = None
+def get_process_reimbursement():
+    global process_reimbursement
+    if process_reimbursement is None:
+        try:
+            from expense_agent.main import process_reimbursement as _pr
+            process_reimbursement = _pr
+        except Exception as e:
+            logging.error(f"Failed to import expense_agent: {e}")
+            raise
+    return process_reimbursement
+
 from web_app.database import create_db_and_tables, get_session, engine
 from web_app.models import ReimbursementPolicy, WorkflowTemplate, ReimbursementRecord, User, GlobalSettings
 from web_app.ai_wizard import get_ai_response
@@ -270,7 +283,7 @@ async def process_files(
 
         # 4. Process with Config
         logger.info(f"Processing in {temp_dir} with config {config}")
-        result = process_reimbursement(input_dir, output_dir, config=config)
+        result = get_process_reimbursement()(input_dir, output_dir, config=config)
         
         if result.get("status") == "error":
              shutil.rmtree(temp_dir)
