@@ -97,6 +97,11 @@ async def api_me(user: User = Depends(require_auth)):
         company_name=company_name
     )
 
+# Lightweight health check endpoint for Railway/Render
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
+
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
