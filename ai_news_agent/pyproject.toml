@@ -13,6 +13,8 @@ dependencies = [
     "duckduckgo-search>=8.1.1",
     "litellm>=1.0.0",
     "fastapi>=0.100.0",
+    "feedparser",
+    "beautifulsoup4",
 ]
 
 [project.scripts]

@@ -13,6 +13,8 @@ from crewai.project import CrewBase, agent, crew, task
 from .tools.reddit_tool import RedditFetchTool
 from .tools.hackernews_tool import HackerNewsFetchTool
 from .tools.twitter_tool import CrewTwitterSearchTool
+from .tools.rss_tool import RSSFetchTool
+
 
 
 def setup_proxy():
@@ -122,6 +124,16 @@ class AINewsAgentCrew:
         )
     
     @agent
+    def deep_content_curator(self) -> Agent:
+        """角色5: 深度内容鉴赏家"""
+        return Agent(
+            config=self.agents_config["deep_content_curator"],
+            verbose=True,
+            tools=[RSSFetchTool()],
+            llm=self.llm
+        )
+
+    @agent
     def tech_analyst(self) -> Agent:
         """角色4: 技术分析师"""
         return Agent(
@@ -149,6 +161,13 @@ class AINewsAgentCrew:
         """任务3: 收集 Twitter 帖子"""
         return Task(
             config=self.tasks_config["gather_twitter_posts_task"]
+        )
+
+    @task
+    def daily_deep_dive_task(self) -> Task:
+        """任务5: 每日深度推荐筛选"""
+        return Task(
+            config=self.tasks_config["daily_deep_dive_task"]
         )
     
     @task

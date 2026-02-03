@@ -3,7 +3,7 @@
 gather_reddit_posts_task:
   description: >
     1. 使用 fetch_subreddit_posts 工具获取以下版块的今日热门内容：{target_subreddits}
-    2. 从所有帖子中，筛选出 6-8 个最能激发"构建欲望"的内容
+    2. 从所有帖子中，筛选出 8-10 个最能激发"构建欲望"的内容
     3. 你的搜寻雷达关键词：
        - **AI IDE**: Cursor, Windsurf, Copilot
        - **Rapid Dev**: v0, Bolt.new, Replit, Lovable
@@ -38,22 +38,27 @@ gather_hackernews_posts_task:
 analyze_and_report_task:
   description: >
     将收集到的情报整合成一份《AI Vibe Coding 日报》。
-    
+
+    **重要**: 最终报告必须包含 **至少 10 条** 精选内容！
+
     结构要求：
-    1. **⚡️ Vibe of the Day** (今日最令人兴奋的一个发现，放在最前面)
-    2. **🛠️ 效率神器 (Toolkit)** (Cursor 技巧, 新 VSCode 插件, CLI 工具等)
-    3. **🔥 热门项目 (Repos & Demos)** (Github 高星, Show HN 精选)
-    4. **📚 必读教程 (Tutorials)** (实战类的，教你怎么写的)
-    
+    1. **🌊 Daily Deep Dive** (深度推荐, 由 deep_content_curator 提供的唯一文章，放在最显眼的位置)
+    2. **⚡️ Vibe of the Day** (今日最令人兴奋的 1 个发现)
+    3. **🛠️ 效率神器 (Toolkit)** (至少 2-3 条: Cursor 技巧, 新 VSCode 插件, CLI 工具等)
+    4. **🔥 热门项目 (Repos & Demos)** (至少 3-4 条: Github 高星, Show HN 精选, Reddit 热帖)
+    5. **📚 必读教程 (Tutorials)** (至少 2-3 条: 实战类的，教你怎么写的)
+
     写作风格指南：
-    - 直接，不要废话。告诉读者“去哪里下”、“怎么用”、“有什么用”。
+    - 直接，不要废话。告诉读者"去哪里下"、"怎么用"、"有什么用"。
     - 如果有代码片段或配置参数，简要提及。
     - 使用 Emoji 让排版看起来像一份精美的 Newsletter。
+    - 每条新闻必须包含：标题、来源链接、一句话推荐理由
     - 并在文末加一句 "Happy Coding! 🚀"
-    
+
     使用中文撰写。
   expected_output: >
     一份 Markdown 格式的日报。需包含日期。
+    必须有 10 条以上的精选内容，分布在各个分类中。
     内容必须极具实操性，让读者读完觉得"技能树+1"。
   agent: tech_analyst
   output_file: reports/daily_report.md
@@ -72,5 +77,21 @@ gather_twitter_posts_task:
     - 作者
     - 推文链接
     - 原始内容摘要
+    - 原始内容摘要
     - **Vibe Check**: 为什么这个值得关注？
   agent: twitter_scout
+
+daily_deep_dive_task:
+  description: >
+    1. 使用 fetch_deep_content_feeds 工具获取顶级技术博客的最新文章。
+    2. 阅读所有文章的摘要/片段。
+    3. 评估每一篇文章的"含金量" (Signal-to-Noise Ratio)。
+    4. 挑选出 **唯一一篇** 最值得今天阅读的文章。如果没有达到标准的高质量文章，可以说"今日无深度推荐"（宁缺毋滥）。
+    5. 为这篇文章写一段推荐语，解释为什么它值得花时间阅读。
+  expected_output: >
+    一份极简的深度推荐（Deep Dive），包含：
+    - 🔗 文章链接
+    - 📖 标题
+    - 🧠 推荐理由 (为什么这篇文章能提升我的认知？)
+    - ⏱️ 预估阅读时间
+  agent: deep_content_curator
