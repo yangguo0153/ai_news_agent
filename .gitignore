@@ -1,0 +1,37 @@
+# Node.js 依赖目录 - 绝对不要提交
+node_modules/
+
+# 构建输出
+dist/
+build/
+.next/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+npm-debug.log*
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# IDE 配置（可选保留）
+# .vscode/
+# .idea/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*~

@@ -146,24 +146,111 @@ class PushTool(BaseTool):
             return f"❌ 文件保存失败: {str(e)}"
     
     def _markdown_to_html(self, markdown: str) -> str:
-        """简单的 Markdown 转 HTML"""
-        # 基础转换
+        """将 Markdown 转换为精美的 Newsletter HTML 邮件"""
+        import re
+        
+        # 移除 markdown 代码块包装（如果有）
+        markdown = re.sub(r'^```markdown\s*\n?', '', markdown)
+        markdown = re.sub(r'\n?```\s*$', '', markdown)
+        
         html = markdown
         
-        # 处理标题 (在处理换行符之前)
-        import re
-        html = re.sub(r"^# (.+)$", r"<h1>\1</h1>", html, flags=re.MULTILINE)
-        html = re.sub(r"^## (.+)$", r"<h2>\1</h2>", html, flags=re.MULTILINE)
-        html = re.sub(r"^### (.+)$", r"<h3>\1</h3>", html, flags=re.MULTILINE)
+        # 处理代码块 (``` 包裹的内容)
+        html = re.sub(
+            r'```(\w*)\n(.*?)```',
+            r'<pre style="background: #1e1e2e; border-radius: 8px; padding: 16px; overflow-x: auto; font-family: \'SF Mono\', Monaco, monospace; font-size: 13px; color: #cdd6f4; margin: 16px 0;"><code>\2</code></pre>',
+            html,
+            flags=re.DOTALL
+        )
+        
+        # 处理行内代码
+        html = re.sub(
+            r'`([^`]+)`',
+            r'<code style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; padding: 2px 6px; border-radius: 4px; font-family: \'SF Mono\', Monaco, monospace; font-size: 0.9em;">\1</code>',
+            html
+        )
+        
+        # 处理标题
+        html = re.sub(
+            r"^# (.+)$",
+            r'<h1 style="font-size: 28px; font-weight: 700; color: #f8fafc; margin: 0 0 8px 0; line-height: 1.3;">\1</h1>',
+            html,
+            flags=re.MULTILINE
+        )
+        html = re.sub(
+            r"^## (.+)$",
+            r'<div style="margin-top: 32px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(148, 163, 184, 0.2);"><h2 style="font-size: 20px; font-weight: 600; color: #e2e8f0; margin: 0;">\1</h2></div>',
+            html,
+            flags=re.MULTILINE
+        )
+        html = re.sub(
+            r"^### (.+)$",
+            r'<h3 style="font-size: 16px; font-weight: 600; color: #cbd5e1; margin: 20px 0 8px 0;">\1</h3>',
+            html,
+            flags=re.MULTILINE
+        )
         
         # 处理链接
-        html = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', html)
+        html = re.sub(
+            r"\[([^\]]+)\]\(([^)]+)\)",
+            r'<a href="\2" style="color: #60a5fa; text-decoration: none; border-bottom: 1px solid rgba(96, 165, 250, 0.3); transition: all 0.2s;">\1</a>',
+            html
+        )
         
         # 处理粗体
-        html = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", html)
+        html = re.sub(r"\*\*([^*]+)\*\*", r"<strong style='color: #f1f5f9;'>\1</strong>", html)
         
-        # 基础转换
-        html = html.replace("\n\n", "</p><p>")
+        # 处理列表项 (- 开头)
+        html = re.sub(
+            r"^- (.+)$",
+            r'<div style="display: flex; align-items: flex-start; margin: 8px 0; padding-left: 4px;"><span style="color: #8b5cf6; margin-right: 10px; font-weight: bold;">›</span><span style="color: #cbd5e1; line-height: 1.6;">\1</span></div>',
+            html,
+            flags=re.MULTILINE
+        )
+        
+        # 处理水平线
+        html = re.sub(
+            r"^---+$",
+            r'<hr style="border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent); margin: 24px 0;">',
+            html,
+            flags=re.MULTILINE
+        )
+        
+        # 处理段落（连续两个换行）
+        html = html.replace("\n\n", '</p><p style="color: #94a3b8; line-height: 1.7; margin: 12px 0;">')
         html = html.replace("\n", "<br>")
         
-        return f"<html><body><p>{html}</p></body></html>"
+        # 完整的 HTML 模板
+        full_html = f'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vibe Coding 日报</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); min-height: 100vh;">
+    <div style="max-width: 680px; margin: 0 auto; padding: 40px 20px;">
+        <!-- Header -->
+        <div style="text-align: center; margin-bottom: 32px;">
+            <div style="display: inline-block; background: linear-gradient(135deg, #8b5cf6, #6366f1); padding: 12px 24px; border-radius: 50px; margin-bottom: 16px;">
+                <span style="color: white; font-size: 14px; font-weight: 600; letter-spacing: 1px;">🚀 AI VIBE CODING</span>
+            </div>
+        </div>
+        
+        <!-- Main Content Card -->
+        <div style="background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(10px); border-radius: 16px; padding: 32px; border: 1px solid rgba(148, 163, 184, 0.1); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+            <p style="color: #94a3b8; line-height: 1.7; margin: 12px 0;">
+                {html}
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 32px; padding: 24px; color: #64748b; font-size: 13px;">
+            <p style="margin: 0 0 8px 0;">Powered by <span style="color: #8b5cf6;">AI News Agent</span> 🤖</p>
+            <p style="margin: 0; opacity: 0.7;">Stay curious, keep building.</p>
+        </div>
+    </div>
+</body>
+</html>'''
+        
+        return full_html

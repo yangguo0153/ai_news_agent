@@ -26,6 +26,7 @@ cp .env.example .env
 ```
 
 **必需配置:**
+
 - `OPENAI_API_KEY`: OpenAI API 密钥
 - `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET`: Reddit API 凭证
 
