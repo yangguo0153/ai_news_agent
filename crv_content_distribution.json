@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "style": "S4生活观察",
+    "angle": "A6成本算账",
+    "topic": "方向一：新春购车指南",
+    "opening": "H4场景切入型",
+    "structure": "L2场景引入→数据佐证",
+    "data_point": "购置税补贴5000元",
+    "closing": "E2建议型"
+  },
+  {
+    "id": 2,
+    "style": "S2干货科普",
+    "angle": "A5数据说话",
+    "topic": "方向一：新春购车指南",
+    "opening": "H3数据冲击型",
+    "structure": "L1数据先行→场景验证",
+    "data_point": "置换补贴4000元",
+    "closing": "E4数据回扣"
+  },
+  {
+    "id": 3,
+    "style": "S1犀利观点",
+    "angle": "A2行业观察",
+    "topic": "方向一：新春购车指南",
+    "opening": "H1反问型",
+    "structure": "L5问答递进→观点",
+    "data_point": "0首付0利息",
+    "closing": "E3金句型"
+  },
+  {
+    "id": 4,
+    "style": "S3幽默段子",
+    "angle": "A1路人观察",
+    "topic": "方向一：新春购车指南",
+    "opening": "H5反常识型",
+    "structure": "L3对比法→结论",
+    "data_point": "2025全年19万辆",
+    "closing": "E1开放提问"
+  },
+  {
+    "id": 5,
+    "style": "S5真实测评",
+    "angle": "A4场景实测",
+    "topic": "方向一：新春购车指南",
+    "opening": "H2揭秘型",
+    "structure": "L4时间线→感受",
+    "data_point": "12月超2万环比上涨18%",
+    "closing": "E5场景呼应"
+  },
+  {
+    "id": 6,
+    "style": "S4生活观察",
+    "angle": "A1路人观察",
+    "topic": "方向二：春节出行情感",
+    "opening": "H4场景切入型",
+    "structure": "L4时间线→感受",
+    "data_point": "10安全气囊",
+    "closing": "E5场景呼应"
+  },
+  {
+    "id": 7,
+    "style": "S5真实测评",
+    "angle": "A4场景实测",
+    "topic": "方向二：春节出行情感",
+    "opening": "H2揭秘型",
+    "structure": "L2场景引入→数据佐证",
+    "data_point": "590Mpa高强钢占比49.3%",
+    "closing": "E3金句型"
+  },
+  {
+    "id": 8,
+    "style": "S1犀利观点",
+    "angle": "A6成本算账",
+    "topic": "方向二：春节出行情感",
+    "opening": "H1反问型",
+    "structure": "L3对比法→结论",
+    "data_point": "Honda SENSING 360+",
+    "closing": "E2建议型"
+  },
+  {
+    "id": 9,
+    "style": "S2干货科普",
+    "angle": "A3专业对比",
+    "topic": "方向二：春节出行情感",
+    "opening": "H3数据冲击型",
+    "structure": "L1数据先行→场景验证",
+    "data_point": "DMS驾驶员感知",
+    "closing": "E1开放提问"
+  },
+  {
+    "id": 10,
+    "style": "S3幽默段子",
+    "angle": "A2行业观察",
+    "topic": "方向二：春节出行情感",
+    "opening": "H5反常识型",
+    "structure": "L6单一深挖→收尾",
+    "data_point": "全球71万台/累计1500万台",
+    "closing": "E4数据回扣"
+  },
+  {
+    "id": 11,
+    "style": "S2干货科普",
+    "angle": "A3专业对比",
+    "topic": "方向三：车型深度解析",
+    "opening": "H3数据冲击型",
+    "structure": "L1数据先行→场景验证",
+    "data_point": "60.27%保值率",
+    "closing": "E4数据回扣"
+  },
+  {
+    "id": 12,
+    "style": "S5真实测评",
+    "angle": "A4场景实测",
+    "topic": "方向三：车型深度解析",
+    "opening": "H2揭秘型",
+    "structure": "L6单一深挖→收尾",
+    "data_point": "增配升值1.5万",
+    "closing": "E2建议型"
+  },
+  {
+    "id": 13,
+    "style": "S3幽默段子",
+    "angle": "A1路人观察",
+    "topic": "方向三：车型深度解析",
+    "opening": "H5反常识型",
+    "structure": "L3对比法→结论",
+    "data_point": "MM理念",
+    "closing": "E1开放提问"
+  },
+  {
+    "id": 14,
+    "style": "S1犀利观点",
+    "angle": "A2行业观察",
+    "topic": "方向三：车型深度解析",
+    "opening": "H1反问型",
+    "structure": "L5问答递进→观点",
+    "data_point": "90度后门",
+    "closing": "E3金句型"
+  },
+  {
+    "id": 15,
+    "style": "S4生活观察",
+    "angle": "A5数据说话",
+    "topic": "方向三：车型深度解析",
+    "opening": "H4场景切入型",
+    "structure": "L2场景引入→数据佐证",
+    "data_point": "Honda CONNECT 4.0",
+    "closing": "E5场景呼应"
+  }
+]
