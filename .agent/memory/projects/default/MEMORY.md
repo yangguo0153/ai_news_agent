@@ -26,6 +26,14 @@
 - 置信度：0.98
 - 状态：active
 
+### 4) 提交后继承行为
+- 结论：将 `AGENTS.md` 与 `.agent/memory` 提交到 `main` 后，新建 worktree 会自动继承这些文件。
+- 证据：提交 `84b2c89` 后创建 `codex/agents-check-v2`，无需手动拷贝即包含完整文件集。
+- 来源：本次提交与验证（2026-02-24）。
+- 日期：2026-02-24
+- 置信度：0.99
+- 状态：active
+
 ## Superseded Knowledge
 - 暂无
 
