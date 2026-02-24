@@ -34,6 +34,22 @@
 - 置信度：0.99
 - 状态：active
 
+### 5) 内容变现工作区模板
+- 结论：内容型 workspace 的最小有效结构为 `inputs + prompts + outputs + pipeline + templates`。
+- 证据：`/Users/will/Desktop/agent-engineer` 已按该结构落地，并包含公众号与抖音双渠道模板。
+- 来源：本次交付（2026-02-24）。
+- 日期：2026-02-24
+- 置信度：0.97
+- 状态：active
+
+### 6) 周复盘自动化模式
+- 结论：周复盘最小自动化应包含“日志聚合脚本 + 3内容生成 Prompt + 发布计划模板”。
+- 证据：`run_weekly_review.sh` 可自动汇总最近7日日志并产出 `weekly_input_pack.md` 与 `publish_plan.md`。
+- 来源：本次实测（2026-02-24）。
+- 日期：2026-02-24
+- 置信度：0.99
+- 状态：active
+
 ## Superseded Knowledge
 - 暂无
 
