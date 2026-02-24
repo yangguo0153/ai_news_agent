@@ -1,0 +1,37 @@
+# Default Project Memory
+
+## Active Knowledge
+
+### 1) 协作机制
+- 结论：采用“最小 AGENTS 保底 + 全局记忆 Skill”。
+- 证据：用户确认“按推荐执行”。
+- 来源：会话决策（2026-02-24）。
+- 日期：2026-02-24
+- 置信度：0.98
+- 状态：active
+
+### 2) 全局能力落地状态
+- 结论：`memory-compound` 全局 Skill 已安装到 `~/.codex/skills/memory-compound`。
+- 证据：目录下 `SKILL.md`、`agents/openai.yaml`、`references/memory_schema.md` 均存在。
+- 来源：本次执行结果（2026-02-24）。
+- 日期：2026-02-24
+- 置信度：0.97
+- 状态：active
+
+### 3) worktree 与 AGENTS 行为
+- 结论：`AGENTS.md` 若未提交，仅在当前工作区可见；新建 `worktree` 默认检出不到该文件。
+- 证据：`codex/agents-check` worktree 初始缺失 `AGENTS.md`，手动同步后恢复为 1310 字节。
+- 来源：本次 worktree 校验（2026-02-24）。
+- 日期：2026-02-24
+- 置信度：0.98
+- 状态：active
+
+## Superseded Knowledge
+- 暂无
+
+## Reusable Patterns
+- 先建立固定记忆结构，再在任务结束时沉淀高价值结论。
+- 采用“索引优先、按需读取”减少上下文开销。
+
+## Last Updated
+- 2026-02-24
