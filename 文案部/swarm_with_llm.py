@@ -1,6 +1,7 @@
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
 from config import config
+from scene_rag import SceneRetriever
 
 """
 Agent Swarm 原型 - Content Expansion (with Real LLM)
@@ -22,6 +23,13 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, Alignment, PatternFill
 
 _api_semaphore = asyncio.Semaphore(config.CONCURRENT_LIMIT)
+
+scene_retriever = SceneRetriever(
+    scene_library_path="02-参考学习/03-Writer材料/内容变量库/场景切入库.md",
+    top_k=config.SCENE_RAG_TOP_K,
+    min_score=config.SCENE_RAG_MIN_SCORE,
+    default_scene=config.SCENE_RAG_DEFAULT_SCENE,
+)
 
 # ============================================================================
 # Shared Context（所有角色共享的状态）
@@ -73,51 +81,12 @@ def random_sample_details(detail_library: List[str], k: int = 3) -> List[str]:
 
 async def map_scene_to_keywords_async(scene_text: str, api_key: str, api_url: str) -> str:
     """
-    将用户场景文本映射为可复用的场景标签。
-    当前实现为本地规则映射，不依赖网络，保证稳定可用。
+    兼容层：保留旧调用签名，内部改为 SceneRetriever 本地检索。
     """
-    del api_key, api_url  # 兼容既有调用签名，当前版本不使用外部 API
-
-    default_scene = "春节返乡"
-    rule_map = {
-        "春节返乡": [
-            "春节", "过年", "返乡", "回家", "团圆", "春运", "年货", "走亲访友", "满载而归"
-        ],
-        "周末出游": [
-            "周末", "自驾", "露营", "郊游", "短途", "出游", "旅行", "山路", "野餐"
-        ],
-        "日常通勤": [
-            "通勤", "早高峰", "晚高峰", "堵车", "上班", "地库", "油耗", "代步"
-        ],
-        "亲子游玩": [
-            "亲子", "孩子", "宝宝", "儿童座椅", "遛娃", "全家", "后排"
-        ],
-        "孝敬父母": [
-            "父母", "长辈", "老人", "孝敬", "接送", "舒适", "乘坐"
-        ],
-    }
-
-    text = (scene_text or "").strip()
-    if not text:
-        return default_scene
-
-    scores = {}
-    hits = {}
-    for scene, keywords in rule_map.items():
-        matched = [kw for kw in keywords if kw in text]
-        if matched:
-            scores[scene] = len(matched)
-            hits[scene] = matched
-
-    if not scores:
-        return default_scene
-
-    best_scene = sorted(scores.items(), key=lambda item: item[1], reverse=True)[0][0]
-    matched_keywords = hits.get(best_scene, [])
-    if not matched_keywords:
-        return best_scene
-
-    return f"{best_scene}｜关键词:{'、'.join(matched_keywords[:5])}"
+    del api_key, api_url
+    result = scene_retriever.retrieve(scene_text)
+    keywords = "、".join(result["keywords"]) if result["keywords"] else result["scene_type"]
+    return f"{result['scene_type']}｜关键词:{keywords}｜score:{result['score']:.2f}"
 
 
 @retry(
@@ -154,10 +123,10 @@ async def call_deepseek_api_async(prompt: str, api_key: str, api_url: str, tempe
 
     async with _api_semaphore:
         async with aiohttp.ClientSession() as session:
-            async with session.post(api_url, headers=headers, json=payload, timeout=60) as response:
-                response.raise_for_status()
-                result = await response.json()
-                return result['choices'][0]['message']['content'].strip()
+        async with session.post(api_url, headers=headers, json=payload, timeout=60) as response:
+            response.raise_for_status()
+            result = await response.json()
+            return result['choices'][0]['message']['content'].strip()
 
 
 
@@ -693,20 +662,20 @@ async def evaluate_content_ai_flavor_async(content: str, assignment: Dict, api_k
     }
     async with _api_semaphore:
         async with aiohttp.ClientSession() as session:
-            async with session.post(api_url, headers=headers, json=payload, timeout=60) as response:
-                try:
-                    response.raise_for_status()
-                    result = await response.json()
-                    raw_content = result['choices'][0]['message']['content'].strip()
-                    if raw_content.startswith("```json"): raw_content = raw_content[7:]
-                    if raw_content.startswith("```"): raw_content = raw_content[3:]
-                    if raw_content.endswith("```"): raw_content = raw_content[:-3]
-                    review_res = json.loads(raw_content.strip())
-                    return review_res
-                except Exception as e:
-                    print(f"[Reviewer API Error] {e}")
-                    # 解析失败时默认放行，避免无限循环打回
-                    return {"passed": True, "score": 7, "issues": [], "suggestions": []}
+        async with session.post(api_url, headers=headers, json=payload, timeout=60) as response:
+            try:
+                response.raise_for_status()
+                result = await response.json()
+                raw_content = result['choices'][0]['message']['content'].strip()
+                if raw_content.startswith("```json"): raw_content = raw_content[7:]
+                if raw_content.startswith("```"): raw_content = raw_content[3:]
+                if raw_content.endswith("```"): raw_content = raw_content[:-3]
+                review_res = json.loads(raw_content.strip())
+                return review_res
+            except Exception as e:
+                print(f"[Reviewer API Error] {e}")
+                # 解析失败时默认放行，避免无限循环打回
+                return {"passed": True, "score": 7, "issues": [], "suggestions": []}
 
 def build_revision_prompt(customer_brief, assignment, original_content, issues, suggestions):
     """
@@ -929,13 +898,27 @@ def 策划者(state: SharedContext) -> SharedContext:
     
     print(f"\n[策划者] 正在接收并解构宏观场景: '{direction}'...")
     try:
+        scene_match = scene_retriever.retrieve(direction)
         enriched_scene_tags = asyncio.run(
             map_scene_to_keywords_async(direction, config.DEEPSEEK_API_KEY, config.DEEPSEEK_API_URL)
         )
-        print(f"  -> 🧠 [动态推演] 场景向量化拆解: {enriched_scene_tags}")
+        print(
+            "  -> 🧠 [动态推演] "
+            f"scene={scene_match['scene_type']}, "
+            f"score={scene_match['score']:.2f}, "
+            f"fallback={scene_match['fallback_used']}, "
+            f"keywords={scene_match['keywords']}"
+        )
     except Exception as e:
-        print(f"  -> ⚠️ 场景推演失败，退回原始字符: {e}")
-        enriched_scene_tags = direction
+        print(f"  -> ⚠️ 场景推演失败，退回默认场景: {e}")
+        scene_match = {
+            "scene_type": config.SCENE_RAG_DEFAULT_SCENE,
+            "keywords": [],
+            "evidence": ["retriever_exception"],
+            "score": 0.0,
+            "fallback_used": True,
+        }
+        enriched_scene_tags = scene_match["scene_type"]
     
     assignments = []
     for i in range(num_contents):
@@ -943,13 +926,17 @@ def 策划者(state: SharedContext) -> SharedContext:
             "id": i + 1,
             "persona": target_users[i % len(target_users)],
             "selling_point": selling_points[i % len(selling_points)],
-            "scene": f"[{direction}] - {enriched_scene_tags}",
+            "scene": scene_match["scene_type"],
+            "scene_keywords": scene_match["keywords"],
+            "scene_evidence": scene_match["evidence"],
             "style": customer_brief.get("调性", "真实")
         })
 
     planner_brief = {
         "传播方向": direction,
-        "话题切入点": f"{direction} 带来的真实痛点与情绪共鸣",
+        "话题切入点": f"{scene_match['scene_type']} 场景下的真实痛点与情绪共鸣",
+        "场景匹配": scene_match,
+        "场景匹配摘要": enriched_scene_tags,
         "assignments": assignments
     }
 
