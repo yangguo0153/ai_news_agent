@@ -69,6 +69,55 @@ def random_sample_details(detail_library: List[str], k: int = 3) -> List[str]:
     return random.sample(detail_library, min(k, len(detail_library)))
 
 
+async def map_scene_to_keywords_async(scene_text: str, api_key: str, api_url: str) -> str:
+    """
+    将用户场景文本映射为可复用的场景标签。
+    当前实现为本地规则映射，不依赖网络，保证稳定可用。
+    """
+    del api_key, api_url  # 兼容既有调用签名，当前版本不使用外部 API
+
+    default_scene = "春节返乡"
+    rule_map = {
+        "春节返乡": [
+            "春节", "过年", "返乡", "回家", "团圆", "春运", "年货", "走亲访友", "满载而归"
+        ],
+        "周末出游": [
+            "周末", "自驾", "露营", "郊游", "短途", "出游", "旅行", "山路", "野餐"
+        ],
+        "日常通勤": [
+            "通勤", "早高峰", "晚高峰", "堵车", "上班", "地库", "油耗", "代步"
+        ],
+        "亲子游玩": [
+            "亲子", "孩子", "宝宝", "儿童座椅", "遛娃", "全家", "后排"
+        ],
+        "孝敬父母": [
+            "父母", "长辈", "老人", "孝敬", "接送", "舒适", "乘坐"
+        ],
+    }
+
+    text = (scene_text or "").strip()
+    if not text:
+        return default_scene
+
+    scores = {}
+    hits = {}
+    for scene, keywords in rule_map.items():
+        matched = [kw for kw in keywords if kw in text]
+        if matched:
+            scores[scene] = len(matched)
+            hits[scene] = matched
+
+    if not scores:
+        return default_scene
+
+    best_scene = sorted(scores.items(), key=lambda item: item[1], reverse=True)[0][0]
+    matched_keywords = hits.get(best_scene, [])
+    if not matched_keywords:
+        return best_scene
+
+    return f"{best_scene}｜关键词:{'、'.join(matched_keywords[:5])}"
+
+
 @retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
