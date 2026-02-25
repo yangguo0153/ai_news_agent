@@ -12,6 +12,7 @@ class Config:
     # ------------------
     DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "sk-208329981b3940e89602e2afe567d227")
     DEEPSEEK_API_URL = os.getenv("DEEPSEEK_API_URL", "https://api.deepseek.com/v1/chat/completions")
+    CONCURRENT_LIMIT = 5
     
     # ------------------
     # 业务规则配置
