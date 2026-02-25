@@ -168,6 +168,22 @@
 - 置信度：0.99
 - 状态：active
 
+### 21) 历史分支关闭判定与清理已执行
+- 结论：对“截图中疑似 worktree 分支”完成清理：凡已被 `main` 包含且不被 worktree 占用的分支可直接删除；本次已删除 5 个历史分支。
+- 证据：`git branch -d codex/agents-check-v2 codex/agents-check phase3-interaction worktree-cheeky-frolicking-nova worktree-feature-work` 全部成功；当前 `git branch -vv` 仅剩 `main` 和 `codex/quality-optimization-v1`（该分支被 `/private/tmp/wenanbu-quality-opt` 占用）。
+- 来源：本次分支清理执行（2026-02-25）。
+- 日期：2026-02-25
+- 置信度：0.99
+- 状态：active
+
+### 22) 分支清理后的提交流程焦点
+- 结论：清理历史分支后，提交流程应聚焦 `main` 的未跟踪文件，不再以“历史 worktree 进度”作为阻塞条件。
+- 证据：`git status` 仅显示 `文案部/.agent/memory/INDEX.md`、`PROFILE.md`、`daily/2026-02-25.md`、`projects/default/MEMORY.md` 四个未跟踪文件。
+- 来源：本次状态复核（2026-02-25）。
+- 日期：2026-02-25
+- 置信度：0.98
+- 状态：active
+
 ## Superseded Knowledge
 - 暂无
 
