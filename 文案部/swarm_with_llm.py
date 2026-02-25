@@ -123,10 +123,10 @@ async def call_deepseek_api_async(prompt: str, api_key: str, api_url: str, tempe
 
     async with _api_semaphore:
         async with aiohttp.ClientSession() as session:
-        async with session.post(api_url, headers=headers, json=payload, timeout=60) as response:
-            response.raise_for_status()
-            result = await response.json()
-            return result['choices'][0]['message']['content'].strip()
+            async with session.post(api_url, headers=headers, json=payload, timeout=60) as response:
+                response.raise_for_status()
+                result = await response.json()
+                return result['choices'][0]['message']['content'].strip()
 
 
 
@@ -662,20 +662,20 @@ async def evaluate_content_ai_flavor_async(content: str, assignment: Dict, api_k
     }
     async with _api_semaphore:
         async with aiohttp.ClientSession() as session:
-        async with session.post(api_url, headers=headers, json=payload, timeout=60) as response:
-            try:
-                response.raise_for_status()
-                result = await response.json()
-                raw_content = result['choices'][0]['message']['content'].strip()
-                if raw_content.startswith("```json"): raw_content = raw_content[7:]
-                if raw_content.startswith("```"): raw_content = raw_content[3:]
-                if raw_content.endswith("```"): raw_content = raw_content[:-3]
-                review_res = json.loads(raw_content.strip())
-                return review_res
-            except Exception as e:
-                print(f"[Reviewer API Error] {e}")
-                # 解析失败时默认放行，避免无限循环打回
-                return {"passed": True, "score": 7, "issues": [], "suggestions": []}
+            async with session.post(api_url, headers=headers, json=payload, timeout=60) as response:
+                try:
+                    response.raise_for_status()
+                    result = await response.json()
+                    raw_content = result['choices'][0]['message']['content'].strip()
+                    if raw_content.startswith("```json"): raw_content = raw_content[7:]
+                    if raw_content.startswith("```"): raw_content = raw_content[3:]
+                    if raw_content.endswith("```"): raw_content = raw_content[:-3]
+                    review_res = json.loads(raw_content.strip())
+                    return review_res
+                except Exception as e:
+                    print(f"[Reviewer API Error] {e}")
+                    # 解析失败时默认放行，避免无限循环打回
+                    return {"passed": True, "score": 7, "issues": [], "suggestions": []}
 
 def build_revision_prompt(customer_brief, assignment, original_content, issues, suggestions):
     """

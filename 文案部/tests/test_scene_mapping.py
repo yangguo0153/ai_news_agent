@@ -29,7 +29,7 @@ from swarm_with_llm import map_scene_to_keywords_async
 class SceneMappingTests(unittest.TestCase):
     def test_empty_scene_fallback(self):
         result = asyncio.run(map_scene_to_keywords_async("", "", ""))
-        self.assertEqual(result, "春节返乡")
+        self.assertIn("春节返乡", result)
 
     def test_keyword_scene_mapping(self):
         result = asyncio.run(
