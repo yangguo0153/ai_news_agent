@@ -1,0 +1,11 @@
+[
+  {
+    "id": "douyin-9e5beb9085",
+    "date": "2026-02-24",
+    "fact": "抖音渠道观察：更适合拆单个动作，强调“马上可做”",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.75,
+    "status": "active"
+  }
+]

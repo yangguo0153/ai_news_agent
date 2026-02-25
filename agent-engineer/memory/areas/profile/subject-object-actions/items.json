@@ -1,0 +1,444 @@
+[
+  {
+    "date": "2026-02-25",
+    "fact": "对抗 2026 年的 FOMO，更有效的方法是“少装工具、多做验证”：把学习从工具清单改成问题清单，用 20 分钟验证门槛 + 30 分钟闭环推进真实进展",
+    "source": "/Users/will/Desktop/通往AGI之路/.agent/memory/projects/default/MEMORY.md",
+    "tags": [
+      "失败复盘",
+      "实践",
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-25",
+    "fact": "周复盘最小自动化应包含“日志聚合脚本 + 3内容生成 Prompt + 发布计划模板”",
+    "source": "/Users/will/Desktop/通往AGI之路/.agent/memory/projects/default/MEMORY.md",
+    "tags": [
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-25",
+    "fact": "关键结论 4：文件“看起来为空”根因是打开了同名错误路径",
+    "source": "/Users/will/Desktop/通往AGI之路/.agent/memory/daily/2026-02-25.md",
+    "tags": [
+      "失败复盘",
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-25",
+    "fact": "Skill 结构与初始化脚本均验证通过，可直接用于下一步共创",
+    "source": "/Users/will/Desktop/通往AGI之路/.agent/memory/daily/2026-02-25.md",
+    "tags": [
+      "实践",
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "验证结果**: 文件从422行减少到345行，确认只保留一个优化版本的 方法",
+    "source": "/Users/will/Desktop/通往AGI之路/公司业务/业务文档/财务/_文档/.DEV_LOG.md",
+    "tags": [
+      "实践",
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "问题描述**：v3.6 测试暴露两个核心问题：(1) 生成稿件中仍出现\"首先XX，其次XX\"和\"XX方面\"等结构化表述",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/.DEV_LOG.md",
+    "tags": [
+      "失败复盘",
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "问题描述**：v3.4→v4.0 迭代仍未解决核心矛盾——单 Agent 同时承担策划、写作、审校、查重 4 个角色，Claude Opus 勉强能做，但 Ki...",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/.DEV_LOG.md",
+    "tags": [
+      "失败复盘",
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "第6周：灰度观察、培训交接、问题收敛与验收签署",
+    "source": "/Users/will/Desktop/通往AGI之路/公司业务/业务文档/媒体管理系统/findings.md",
+    "tags": [
+      "失败复盘"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "根目录仅有 ，内容偏原则性，缺少“记忆文件结构/更新触发/验证闭环”",
+    "source": "/Users/will/Desktop/通往AGI之路/findings.md",
+    "tags": [
+      "实践",
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "断点 2: Step 4 每批次完成后 — 批次确认",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/backup/2026-02-11/findings.md",
+    "tags": [
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "文章核心可落地机制不是“写更多模板”，而是：",
+    "source": "/Users/will/Desktop/通往AGI之路/workspace/agent_engineer_setup/findings.md",
+    "tags": [
+      "奇思妙想",
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "微信文章核心机制是“三层记忆 + 渐进式披露 + 自动触发更新（Hooks）”：",
+    "source": "/Users/will/Desktop/通往AGI之路/findings.md",
+    "tags": [
+      "奇思妙想",
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "形成初版结论：新增两项需求串行执行，建议整体按5-6周对外承诺",
+    "source": "/Users/will/Desktop/通往AGI之路/公司业务/业务文档/媒体管理系统/progress.md",
+    "tags": [
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "已在 工作区内产出一篇可直接发布的公众号文章，主题为“化繁为简，对抗 2026 FOMO：少装工具，问题驱动学习”",
+    "source": "/Users/will/Desktop/通往AGI之路/.agent/memory/daily/2026-02-24.md",
+    "tags": [
+      "失败复盘",
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "已为 补齐一键周复盘能力，单命令可生成“周输入包 + 3条内容发布草案模板”",
+    "source": "/Users/will/Desktop/通往AGI之路/.agent/memory/daily/2026-02-24.md",
+    "tags": [
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "尝试通过搜索工具直取微信正文失败后，切换浏览器自动化方式抓取成功",
+    "source": "/Users/will/Desktop/通往AGI之路/progress.md",
+    "tags": [
+      "失败复盘",
+      "奇思妙想",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "对比文章方法与 Codex 官方机制，确认可落地方向为“分层记忆 + 渐进披露 + 更新闭环”",
+    "source": "/Users/will/Desktop/通往AGI之路/progress.md",
+    "tags": [
+      "奇思妙想",
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "完成诊断，4 个断点位置已定位，根因已确认",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/backup/2026-02-11/progress.md",
+    "tags": [
+      "失败复盘",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "完成关键节点校验：标题、5阶段栏、13个里程碑已替换为6周稳妥版",
+    "source": "/Users/will/Desktop/通往AGI之路/公司业务/业务文档/媒体管理系统/progress.md",
+    "tags": [
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "基于用户提供的微信文章思路与 Codex 官方机制，产出一套可落地、可迭代、可审计的 Custom Instructions 与记忆沉淀流程",
+    "source": "/Users/will/Desktop/通往AGI之路/task_plan.md",
+    "tags": [
+      "奇思妙想",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "发现 方法被定义了**两次**（第154行和第321行）",
+    "source": "/Users/will/Desktop/通往AGI之路/公司业务/业务文档/财务/_文档/.DEV_LOG.md",
+    "tags": [
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "原始流程整体是“30天级别”交付节奏，且已有并行/串行混合节点表达",
+    "source": "/Users/will/Desktop/通往AGI之路/公司业务/业务文档/媒体管理系统/findings.md",
+    "tags": [
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "✅ 审核通过率：100%（第2次尝试后）",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/IMPLEMENTATION_SUMMARY.md",
+    "tags": [
+      "奇思妙想"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "✅ 审核-修改循环实现完成（3个测试场景全部通过）",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/deprecated_files/task_plan.md",
+    "tags": [
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "✅ Task 1: 实现 Excel 输出",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/IMPLEMENTATION_SUMMARY.md",
+    "tags": [
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "v5.2: 引入 OpenClaw 语料解决同质化问题，验证整个 Pipeline",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/backup/2026-02-11/task_plan.md",
+    "tags": [
+      "失败复盘",
+      "实践"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "Task Plan: v5.2 — 语料扩充完成，准备验证",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/backup/2026-02-11/task_plan.md",
+    "tags": [
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "Task 2: 实现 Writer 并行执行**",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/deprecated_files/P2_PROGRESS_SAVE.md",
+    "tags": [
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "> 执行模式：完整执行（6个角色依次完成）",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/docs/agent_team_summary.md",
+    "tags": [
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "4. 实现 AskUserQuestion 交互",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/deprecated_files/progress.md",
+    "tags": [
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "3. **开始 Task 3**: 实现批量生成支持",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/deprecated_files/P2_PROGRESS_SAVE.md",
+    "tags": [
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "1. 新增需求的“2周上线”指“开发完成并通过基础联调后可发布到生产”，不含需求反复变更时间",
+    "source": "/Users/will/Desktop/通往AGI之路/公司业务/业务文档/媒体管理系统/task_plan.md",
+    "tags": [
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "1. 实现审核-修改循环（3次上限）",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/deprecated_files/progress.md",
+    "tags": [
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "fact": "1. ✅ **实现 AskUserQuestion 交互** - 已完成",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/deprecated_files/task_plan.md",
+    "tags": [
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-11",
+    "fact": "验证**: 5篇同时启动，无序完成（篇1,3,4,2,5），证明真正并行",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/deprecated_files/WORK_LOG_2026-02-11.md",
+    "tags": [
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-11",
+    "fact": "问题**: 首次通过率仍为 20%，需进一步优化",
+    "source": "/Users/will/Desktop/通往AGI之路/文案部/_archive/deprecated_files/WORK_LOG_2026-02-11.md",
+    "tags": [
+      "失败复盘"
+    ]
+  },
+  {
+    "date": "2026-02-09",
+    "fact": "这个灵感来源于seedancd2.0的发布，视频更逼真了",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-02-09.md",
+    "tags": [
+      "奇思妙想",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-02-07",
+    "fact": "这本身并不是用户的错，而是作为产品开发者需要思考的问题",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-02-07-3.md",
+    "tags": [
+      "失败复盘",
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-07",
+    "fact": "99%的人不会去思考如何去深度使用，而是直接像使用现在的APP一样，傻瓜化，集成化，最大便利化",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-02-07-3.md",
+    "tags": [
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-07",
+    "fact": "4. KPI 没有要求，我认为主要是要保证产能提升，降本其次，因为现在我们这行的报价和供应商成本已经压缩的很低了",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-01-提示词探索.md",
+    "tags": [
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-02-07",
+    "fact": "3. **步骤演示**（2-3分钟）：快速过一遍关键步骤",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-02-07-Claudesidian多端同步完整教程.md",
+    "tags": [
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-01-28",
+    "fact": "另外我也在权衡，如果明年出去的话，其实还是有一些风险",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-01-28.md",
+    "tags": [
+      "失败复盘",
+      "奇思妙想"
+    ]
+  },
+  {
+    "date": "2026-01-28",
+    "fact": "但假如出去的话，心里有点打鼓，因为我 2025 年创业是失败了的",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-01-28.md",
+    "tags": [
+      "失败复盘"
+    ]
+  },
+  {
+    "date": "2026-01-27",
+    "fact": "这种我们是达不到的，但是我们可以通过自己的刻意训练去实现",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-01-27.md",
+    "tags": [
+      "奇思妙想",
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-01-27",
+    "fact": "我现在能理解了，即使你不是一个有天赋的人，但是呢，你可以通过刻意化的训练和系统性的思考去训练自己，提升自己的系统化思维、逻辑思考能力",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-01-27.md",
+    "tags": [
+      "奇思妙想",
+      "洞察"
+    ]
+  },
+  {
+    "date": "2026-01-26",
+    "fact": "通过 AI 我终于找到自己和这个世界链接的方式，在这个世界中我可以把我的任何想法都试图实现，每次做出新的成果我会开心、找到新的颠覆性的工具我会砰砰心跳，这种感觉...",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-01-26.md",
+    "tags": [
+      "奇思妙想",
+      "实践",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-01-25",
+    "fact": "人机协作深度不是简单的回答，而是如何指挥 AI 完成复杂任务并不断迭代优化",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-01-25.md",
+    "tags": [
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-01-25",
+    "fact": "2026 年比拼的不是说你能用 AI 做出多少东西，而是你能否稳定的交付出可靠的东西，或者你通过 AI 帮你实现了一个看似不起眼但其实一直让很多人觉得麻烦的小问...",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-01-25.md",
+    "tags": [
+      "失败复盘",
+      "实践",
+      "洞察",
+      "里程碑"
+    ]
+  },
+  {
+    "date": "2026-01-01",
+    "fact": "你下载好以后你懒得打字也可以解决，只要让 AI 帮你安装一个 open AI 的 whisper，只要你打开这个终端界面，任何你的想法都可以用嘴去表达出来，让他...",
+    "source": "/Users/will/Library/Mobile Documents/iCloud~md~obsidian/Documents/我有一个想法1.1/99_Daily/2026-01-01.md",
+    "tags": [
+      "奇思妙想",
+      "实践",
+      "里程碑"
+    ]
+  }
+]

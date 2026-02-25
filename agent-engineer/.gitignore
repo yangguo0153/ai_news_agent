@@ -1,0 +1,6 @@
+.DS_Store
+outputs/weekly/*/weekly_input_pack.md
+outputs/weekly/*/publish_plan.md
+outputs/wechat/*.md
+outputs/douyin/*.md
+memory/daily/*.tmp.md

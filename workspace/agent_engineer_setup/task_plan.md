@@ -4,7 +4,7 @@
 在桌面创建可执行的 `agent-engineer` 工作区，用于将每日 vibe coding 与项目复盘沉淀为公众号文章与抖音口播脚本，并支持后续变现起步。
 
 ## Current Phase
-Phase 4
+Phase 5
 
 ## Phases
 ### Phase 1: 需求确认与方案定稿
@@ -28,6 +28,14 @@ Phase 4
 - [x] 回写记忆文件
 - **Status:** complete
 
+### Phase 5: 基于文章思路的深度重构
+- [x] 从模板型结构升级为三层记忆结构（Layer1/2/3）
+- [x] 新增每日沉淀脚本（事实提取 + areas summary 更新）
+- [x] 新增周聚合脚本（联合消费 MEMORY + daily + summaries）
+- [x] 重写 prompts/templates/workflow 以强制证据驱动
+- [x] 命令级验证与记忆回写
+- **Status:** complete
+
 ## Decisions Made
 | Decision | Rationale |
 |---|---|
@@ -35,6 +43,7 @@ Phase 4
 | 输入输出分层（inputs/prompts/outputs/pipeline） | 降低维护成本，提升执行一致性 |
 | 同时提供公众号与抖音模板 | 一次输入，多平台复用，提升 ROI |
 | 增加 weekly one-click 脚本 | 把“每周整理成本”压缩到单命令 |
+| 将周脚本升级为三层消费引擎 | 防止周输出只拼接原日志导致结论失真 |
 
 ## Errors Encountered
 | Error | Attempt | Resolution |

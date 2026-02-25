@@ -1,0 +1,56 @@
+[
+  {
+    "id": "topic-05de8a346e",
+    "date": "2026-02-24",
+    "fact": "用 Worktree 把 AI 试错成本降到“可删除目录”",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.8,
+    "status": "active"
+  },
+  {
+    "id": "topic-18a31f0952",
+    "date": "2026-02-24",
+    "fact": "为什么内容生产必须证据驱动而不是灵感驱动",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.8,
+    "status": "active"
+  },
+  {
+    "id": "topic-6319f53ca3",
+    "date": "2026-02-24",
+    "fact": "化繁为简：工具不是收藏品，项目才是老师",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.8,
+    "status": "active"
+  },
+  {
+    "id": "topic-bbfeabd0f5",
+    "date": "2026-02-24",
+    "fact": "20分钟验证卡片：让学习变成可验证动作",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.8,
+    "status": "active"
+  },
+  {
+    "id": "topic-beece53ede",
+    "date": "2026-02-24",
+    "fact": "从“提示词堆砌”升级到“记忆复利引擎”",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.8,
+    "status": "active"
+  },
+  {
+    "id": "topic-c077179d08",
+    "date": "2026-02-24",
+    "fact": "三层记忆如何减少重复沟通成本",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.8,
+    "status": "active"
+  }
+]

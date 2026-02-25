@@ -15,10 +15,10 @@
 | 增加质量清单与变现首步文档 | 保证内容质量与业务闭环 |
 
 ## Resources
-- Source workspace: `/Users/will/Desktop/agent-engineer`
+- Source workspace: `/Users/will/Desktop/通往AGI之路/agent-engineer`
 
 ## Delivery Summary
-- 已创建桌面工作区：`/Users/will/Desktop/agent-engineer`
+- 已创建桌面工作区：`/Users/will/Desktop/通往AGI之路/agent-engineer`
 - 已落地关键文件：
   - `README.md`
   - `AGENTS.md`
@@ -35,8 +35,22 @@
   - `templates/weekly_review_template.md`
 
 ## Weekly One-Click Validation
-- 执行命令：`bash /Users/will/Desktop/agent-engineer/pipeline/run_weekly_review.sh`
+- 执行命令：`bash /Users/will/Desktop/通往AGI之路/agent-engineer/pipeline/run_weekly_review.sh`
 - 生成文件：
-  - `/Users/will/Desktop/agent-engineer/outputs/weekly/2026-W09/weekly_input_pack.md`
-  - `/Users/will/Desktop/agent-engineer/outputs/weekly/2026-W09/publish_plan.md`
+  - `/Users/will/Desktop/通往AGI之路/agent-engineer/outputs/weekly/2026-W09/weekly_input_pack.md`
+  - `/Users/will/Desktop/通往AGI之路/agent-engineer/outputs/weekly/2026-W09/publish_plan.md`
 - 兼容性修复：`mapfile` 在 macOS 默认 bash 不可用，已改为 `while read`。
+
+## Deep Refactor Findings (2026-02-24)
+- 文章核心可落地机制不是“写更多模板”，而是：
+  - 三层记忆（areas/daily/MEMORY）
+  - 渐进式披露（索引优先读取）
+  - 原子事实替代不删除（superseded）
+  - 自动触发沉淀（每日 ingest）
+- 已落地文件：
+  - `/Users/will/Desktop/通往AGI之路/agent-engineer/memory/*`
+  - `/Users/will/Desktop/通往AGI之路/agent-engineer/pipeline/ingest_daily_log.py`
+  - `/Users/will/Desktop/通往AGI之路/agent-engineer/pipeline/build_weekly_context.py`
+- 验证命令：
+  - `bash /Users/will/Desktop/通往AGI之路/agent-engineer/pipeline/run_daily_ingest.sh`
+  - `bash /Users/will/Desktop/通往AGI之路/agent-engineer/pipeline/run_weekly_review.sh 7`

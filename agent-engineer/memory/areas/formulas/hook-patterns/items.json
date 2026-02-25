@@ -1,0 +1,56 @@
+[
+  {
+    "id": "formula-21d12bda90",
+    "date": "2026-02-24",
+    "fact": "三问筛工具：这周要解决什么？20分钟能验证吗？不用它会卡住吗？",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.78,
+    "status": "active"
+  },
+  {
+    "id": "formula-29cb424642",
+    "date": "2026-02-24",
+    "fact": "问AI提示词：要命令、要坑点、要10分钟实验，不要长课",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.78,
+    "status": "active"
+  },
+  {
+    "id": "formula-365a915dcb",
+    "date": "2026-02-24",
+    "fact": "叙事结构：问题 -> 根因 -> 架构 -> 验证 -> 下一步",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.78,
+    "status": "active"
+  },
+  {
+    "id": "formula-3d6ceff3c9",
+    "date": "2026-02-24",
+    "fact": "钩子：先抛结果，再给路径（例如：10分钟完成日更）",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.78,
+    "status": "active"
+  },
+  {
+    "id": "formula-c8d88c997f",
+    "date": "2026-02-24",
+    "fact": "CTA结构：回复关键词领取模板并进入下一步对话",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.78,
+    "status": "active"
+  },
+  {
+    "id": "formula-eefcf9520d",
+    "date": "2026-02-24",
+    "fact": "30分钟学习法：先查基础命令/原理，再做最小实验并记录",
+    "evidence": "新增或重写 15+ 文件，覆盖架构、脚本、提示词、模板；pipeline/ingest_daily_log.py, pipeline/build_weekly_context.py；用户明确指出“初版太粗糙、流于表面”，要求基于文章做深度优化；通过 `git worktree` 清理 Codex 临时 worktree，仅保留 `main` 工作区；公众号文章（已补强实操段）`outputs/wechat/2026-02-24_化繁为简_对抗FOMO.md`",
+    "source": "inputs/daily_logs/2026-02-24.md",
+    "confidence": 0.78,
+    "status": "active"
+  }
+]
