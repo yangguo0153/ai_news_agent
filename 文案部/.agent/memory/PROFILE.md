@@ -11,15 +11,22 @@
 ## 沟通偏好
 - 结论：用户要求全程中文、结论先行、报告包含结果/改动/验证/下一步。
 - 证据：`AGENTS.md` 明确输出规范与交付标准。
-- 来源：`/Users/will/Desktop/通往AGI之路/文案部/AGENTS.md`。
+- 来源：`/Users/will/Desktop/RoadToAGI/文案部/AGENTS.md`。
 - 日期：2026-02-25
+- 置信度：0.99
+- 状态：active
+
+- 结论：本地文件路径禁止使用可点击 Markdown 链接；只接受“原文件名纯文本 + 单反引号绝对路径纯文本”，并禁止裸文件名列表。
+- 证据：用户在 2026-02-26 再次确认点击 `assignment_A.md` 出现空白；根因为链接层 URL 编码导致路径失配。
+- 来源：本次问题复盘与规则收口（2026-02-26）。
+- 日期：2026-02-26
 - 置信度：0.99
 - 状态：active
 
 ## 协作约束
 - 结论：任务需先读记忆再执行，结束需更新 daily 与项目 MEMORY。
 - 证据：`AGENTS.md`“强制流程”与“记忆写入规则”。
-- 来源：`/Users/will/Desktop/通往AGI之路/文案部/AGENTS.md`。
+- 来源：`/Users/will/Desktop/RoadToAGI/文案部/AGENTS.md`。
 - 日期：2026-02-25
 - 置信度：0.99
 - 状态：active

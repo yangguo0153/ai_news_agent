@@ -1,9 +1,10 @@
 # Memory Index
 
 ## 固定入口
-- 个人与协作偏好：`/Users/will/Desktop/通往AGI之路/.agent/memory/PROFILE.md`
-- 默认项目记忆：`/Users/will/Desktop/通往AGI之路/.agent/memory/projects/default/MEMORY.md`
-- 每日记录目录：`/Users/will/Desktop/通往AGI之路/.agent/memory/daily/`
+- 个人与协作偏好：`/Users/will/Desktop/RoadToAGI/.agent/memory/PROFILE.md`
+- 默认项目记忆：`/Users/will/Desktop/RoadToAGI/.agent/memory/projects/default/MEMORY.md`
+- 每日记录目录：`/Users/will/Desktop/RoadToAGI/.agent/memory/daily/`
+- 路径交付唯一权威：`projects/default/MEMORY.md` 条目 37（若与历史 daily 冲突，以该条为准）
 
 ## 读取顺序（渐进式披露）
 1. 先读 `PROFILE.md`
